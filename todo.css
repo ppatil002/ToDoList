@@ -1,0 +1,199 @@
+body{
+    background-color:rgb(92, 183, 206);
+}
+
+
+.topheading{
+    font-size:3rem;
+    font-weight:50;
+    margin:1rem 0 3rem;
+    text-align: center;
+    color:black;
+}
+.styling{
+    font-family: 'Roboto', sans-serif;
+}
+
+.date{
+    font-size:2rem;
+    font-weight:50;
+    margin:1rem 0 3rem;
+    text-align: center;
+    color:black;
+}
+.add-to-do{
+	margin-top: 18px;
+	display: flex;
+}
+
+.inputtext{
+	font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+	color:black;
+	font-size: 1.2rem;
+	margin-right:20px;
+	margin-left:380px;
+	padding: 1.5rem 2rem;
+	border-radius: 0.2rem;
+	background-color: rgb(255, 255, 255);
+	border: none;
+	width: 40%;
+	display: block;
+	border-bottom: 0.3rem solid transparent;
+	transition: all 0.3s;
+  }
+
+  .btn{
+	display: block;
+	margin-left:0%;
+	margin-right: auto;
+	background:black;
+	color:white;
+	border:none;
+	position:relative;
+	height:75px;
+	font-size:1.6em;
+	padding:0 2em;
+	cursor:pointer;
+	transition:800ms ease all;
+	outline:none;
+  }
+  .btn:hover{
+	background:white;
+	color:black;
+  }
+  .btn:before,.btn:after{
+	content:'';
+	position:absolute;
+	top:0;
+	right:0;
+	height:2px;
+	width:0;
+	background: black;
+	transition:400ms ease all;
+  }
+  .btn:after{
+	right:inherit;
+	top:inherit;
+	left:0;
+	bottom:0;
+  }
+  .btn:hover:before,.btn:hover:after{
+	width:100%;
+	transition:800ms ease all;
+  }
+
+  .input_div{
+    display: block;
+    position: relative;
+    margin-top: 70px;
+    margin-left:150px;
+    height: auto;
+    width: 500px;
+    padding: 20px;
+  }
+  
+.priorityheading{
+    font-size:2rem;
+    font-weight:50;
+    color:black;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.input_div{
+    display: flex;
+}
+.c {
+    display: block;
+    position: relative;
+    padding-left: 300px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .c input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+ 
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    margin-left: 250px;
+  }
+ 
+  .c:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  .c input:checked ~ .checkmark {
+    background-color: black;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .c input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .c .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+
+.todolist li{
+  list-style: none;
+  height: 50px;
+  margin-left: 375px;
+  background: white;
+  position:relative;
+  margin-bottom: 10px;
+  margin-right: 400px;
+  font-size: 20px;
+  text-indent: 25px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+#deletebutton{
+  position: absolute;
+  right:0px;
+  background: black;
+  color:whitesmoke;
+  cursor:pointer;
+  width:65px;
+  border-radius:0 3px 3px 0;
+  height: 52px;
+  margin-top: 5px;
+}
+
+.x{
+  display: flex;
+}
+
+
+
+
+  
