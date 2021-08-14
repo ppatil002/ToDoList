@@ -21,4 +21,4 @@ Step7 : If you wish to clear the whole list you can click on the CLEAR ALL butto
 <br>
 
 <h3>Actual working of project</h3>
-![Alt Text](https://github.com/pt3002/ToDoList/blob/main/ss1.JPG)
+<img src="https://github.com/pt3002/ToDoList/blob/main/ss1.JPG"></img>
