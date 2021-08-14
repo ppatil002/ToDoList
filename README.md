@@ -26,4 +26,5 @@ Step7 : If you wish to clear the whole list you can click on the CLEAR ALL butto
 
 <h3>AUTHORS</h3>
 <a href="https://github.com/ppatil002">Pratik Patil</a>
-	 <a href="https://github.com/pt3002">Prerna Tulsiani</a>
+<br>
+<a href="https://github.com/pt3002">Prerna Tulsiani</a>
