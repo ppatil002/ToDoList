@@ -21,8 +21,9 @@ Step7 : If you wish to clear the whole list you can click on the CLEAR ALL butto
 <br>
 
 <h3>Actual working of project</h3>
-<img src="https://github.com/pt3002/ToDoList/blob/main/ss1.JPG"></img>
+<img src="https://github.com/pt3002/ToDoList/blob/main/ss1.JPG" width="150px" height="100px"></img>
 <img src="https://github.com/pt3002/ToDoList/blob/main/ss2.JPG"></img>
 
 <h3>AUTHORS</h3>
-<a href="
+<a href="https://github.com/ppatil002">Pratik Patil</a>
+	 <a href="https://github.com/pt3002">Prerna Tulsiani</a>
