@@ -142,7 +142,7 @@ function remove_task(e){
 	e.parentElement.remove();
 }
 
-
+//ClearAll task function
 function clearall(){
 	let ans=prompt("Are you sure you want to clear whole list?then type YES");
 	if(ans=="YES"){
@@ -163,8 +163,3 @@ function clearall(){
 		alert("OK!");
 	}
 }
-//Edit Button
-function edit_task(){}
-
-
-
