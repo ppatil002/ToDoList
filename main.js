@@ -149,14 +149,15 @@ function clearall(){
 		/*for(let i=0;i<LIST.length();i++){
 			list[i].parentElement.remove();
 		}*/
-		let id_of_list=0;
+		window.location.href=window.location.href;
+		/*let id_of_list=0;
 		var element=document.getElementById(id_of_list);
 		while(element.hasChildNodes()){
 		//element.removeChild(element.firstChild);
 			element.parentElement.remove();
 			id_of_list++;
 			element=document.getElementById(id_of_list);
-		}
+		}*/
 	}
 		
 	else{
