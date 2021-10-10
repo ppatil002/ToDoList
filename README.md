@@ -24,6 +24,8 @@ Step7 : If you wish to clear the whole list you can click on the CLEAR ALL butto
 <img src="https://github.com/pt3002/ToDoList/blob/main/ss1.JPG"></img>
 <img src="https://github.com/pt3002/ToDoList/blob/main/ss2.JPG"></img>
 
+<h3><a href="https://pt3002.github.io/ToDoList/">Click here to view it</a></h3>
+
 <h3>AUTHORS</h3>
 <a href="https://github.com/ppatil002">Pratik Patil</a>
 <br>
