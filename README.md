@@ -31,6 +31,8 @@ Step7 : If you wish to clear the whole list you can click on the CLEAR ALL butto
 <br>
 <a href="https://github.com/pt3002">Prerna Tulsiani</a>
 
+<h3>DEMO OF OUR PROJECT</h3>
+
 
 https://user-images.githubusercontent.com/87142754/141331431-c3c17e19-b539-425a-88c0-0ad72fd3b193.mp4
 
