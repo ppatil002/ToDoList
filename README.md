@@ -33,6 +33,5 @@ Step7 : If you wish to clear the whole list you can click on the CLEAR ALL butto
 
 <h3>DEMO OF OUR PROJECT</h3>
 
-
-https://user-images.githubusercontent.com/87142754/141331431-c3c17e19-b539-425a-88c0-0ad72fd3b193.mp4
+https://user-images.githubusercontent.com/87142754/141331756-f32cca7d-3c1c-4d06-a5b9-82f204f343aa.mp4
 
