@@ -44,8 +44,6 @@ function addToDo(toDo, id, cb, completed, rd1, rd2, rd3) {
 			</div>
 		     </li>`;
 
-    console.log(item);
-
     const position = "beforeend";
     list.insertAdjacentHTML(position, item);
     let status = document.getElementById(cb);
@@ -97,8 +95,6 @@ function addToDo(toDo, id, cb, completed, rd1, rd2, rd3) {
 function task_high(id, cb) {
   var status = document.getElementById(cb);
   var task = document.getElementById(id);
-  console.log(status.checked);
-  console.log(task);
   let index = findTask(task.innerText);
   history[index].completed = status.checked;
   updateStorage();
@@ -127,7 +123,6 @@ function task_medium(id, cb) {
 function task_low(id, cb) {
   var status = document.getElementById(cb);
   var task = document.getElementById(id);
-  // console.log(status);
   let index = findTask(task.innerText);
   console.log(history[index].completed);
   console.log(status.checked);
@@ -172,7 +167,6 @@ function addtask() {
     };
     history.push(itemObj);
     updateStorage();
-    LIST.push({ name: a, id: id, trash: false, count_for_cb: count_for_cb });
     id++;
     count_for_cb++;
   }
@@ -194,22 +188,11 @@ function remove_task(e) {
 
 //ClearAll task function
 function clearall() {
-  let ans = prompt("Are you sure you want to clear whole list?then type YES");
-  if (ans == "YES") {
-    /*for(let i=0;i<LIST.length();i++){
-			list[i].parentElement.remove();
-		}*/
-    window.location.href = window.location.href;
-    /*let id_of_list=0;
-		var element=document.getElementById(id_of_list);
-		while(element.hasChildNodes()){
-		//element.removeChild(element.firstChild);
-			element.parentElement.remove();
-			id_of_list++;
-			element=document.getElementById(id_of_list);
-		}*/
+  if (confirm("Re you sure you want to clear the list") == true) {
+    history.splice(0, history.length);
+    updateStorage();
+    window.location.href = window.location.href; //? To reload the screen
   } else {
-    alert("OK!");
   }
 }
 
