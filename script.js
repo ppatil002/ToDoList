@@ -6,12 +6,11 @@ dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 
 const list = document.getElementById("list");
 var input = document.querySelector("#input");
-let LIST = [],
-  id = 0,
+let id = 0,
   count_for_cb = 1000;
 
 //! localStorage.removeItem("TODO");
-let history = [];
+let history = []; // Getting items which are stored in local storage
 history = JSON.parse(localStorage.getItem("TODO"));
 history.forEach((element) => {
   addToDo(
@@ -23,74 +22,90 @@ history.forEach((element) => {
     element.rd2,
     element.rd3
   );
-  id = Math.max(id, element.id + 1);
-  count_for_cb = Math.max(count_for_cb, element.count_for_cb + 1);
+  id = Math.max(id, element.id + 1); // Selecting the id of next element ehich can be added
+  count_for_cb = Math.max(count_for_cb, element.count_for_cb + 1); // Max is taken to avoid 2 elements giving same id name
 });
-console.log(history);
+// console.log(history);
 
 function addToDo(toDo, id, cb, completed, rd1, rd2, rd3) {
   if (rd1) {
-    // color=red;
+    //$ color=red;
+    let style = "background-color:rgb(214, 63, 63)";
+    if (completed) {
+      style = "background-color:#808080;";
+    }
     const item = `<li class="item">
 			<div class="x">
 			<label class="c1">
 			<input type="checkbox" id="${cb}" onclick="task_high(${id},${cb})" ><span class="checkmarkforCB"></span>
 			</label>
-			<p class="text1" id="${id}" style="background-color:rgb(214, 63, 63);">${toDo}</p>
+			<p class="text1" id="${id}" style="${style}">${toDo}</p>
 			<button onclick="remove_task(this)" class="fas fa-trash" id="deletebutton"></button>
 			</div>
 		     </li>`;
 
-    let status = document.getElementById(cb);
-    // status.checked = completed;
-    // task_high(id, cb);
+    console.log(item);
+
     const position = "beforeend";
     list.insertAdjacentHTML(position, item);
+    let status = document.getElementById(cb);
+    status.checked = completed;
   } else if (rd2) {
-    // color=light blue;
+    //$ color=light blue;
+    let style = "background-color:rgb(144,238,144)";
+    if (completed) {
+      style = "background-color:#808080;";
+    }
     const item = `<li class="item">
 			<div class="x">
 			<label class="c1">
 			<input type="checkbox" id="${cb}" onclick="task_medium(${id},${cb})" ><span class="checkmarkforCB"></span>
 			</label>
-			<p class="text2" id="${id}" style="background-color:rgb(144,238,144);">${toDo}</p>
+			<p class="text2" id="${id}" style="${style}";">${toDo}</p>
 			<button onclick="remove_task(this)" class="fas fa-trash" id="deletebutton"></button>
 			</div>
 		     </li>`;
 
-    let status = document.getElementById(cb);
-    // status.checked = completed;
-    // task_medium(id, cb);
     const position = "beforeend";
     list.insertAdjacentHTML(position, item);
+    let status = document.getElementById(cb);
+    status.checked = completed;
   } else {
-    // color=light green;
+    //$ color=light green;
+    let style = "background-color:rgb(125, 216, 247)";
+    if (completed) {
+      style = "background-color:#808080;";
+    }
     const item = `<li class="item">
 			<div class="x">
 			<label class="c1">
 			<input type="checkbox" id="${cb}" onclick="task_low(${id},${cb})" ><span class="checkmarkforCB"></span>
 			</label>
-			<p class="text3" id="${id}" style="background-color:rgb(125, 216, 247);">${toDo}</p>
+			<p class="text3" id="${id}" style="${style}">${toDo}</p>
 			<button onclick="remove_task(this)" class="fas fa-trash" id="deletebutton"></button>
 			</div>
 		     </li>`;
-    let status = document.getElementById(cb);
-    // status.checked = completed;
-    // task_low(id, cb);
     const position = "beforeend";
     list.insertAdjacentHTML(position, item);
+    let status = document.getElementById(cb);
+    status.checked = completed;
   }
 }
 
 //Check/Uncheck task
-//LOW Priority
-function task_low(id, cb) {
+//HIGH Priority
+function task_high(id, cb) {
   var status = document.getElementById(cb);
   var task = document.getElementById(id);
+  console.log(status.checked);
+  console.log(task);
+  let index = findTask(task.innerText);
+  history[index].completed = status.checked;
+  updateStorage();
   if (status.checked == true) {
     task.style.background = "grey";
   } else {
-    task.style.background = "rgb(125, 216, 247)";
+    task.style.background = "rgb(214, 63, 63)";
   }
 }
 
@@ -98,6 +113,9 @@ function task_low(id, cb) {
 function task_medium(id, cb) {
   var status = document.getElementById(cb);
   var task = document.getElementById(id);
+  let index = findTask(task.innerText);
+  history[index].completed = status.checked;
+  updateStorage();
   if (status.checked == true) {
     task.style.background = "grey";
   } else {
@@ -105,14 +123,20 @@ function task_medium(id, cb) {
   }
 }
 
-//HIGH Priority
-function task_high(id, cb) {
+//LOW Priority
+function task_low(id, cb) {
   var status = document.getElementById(cb);
   var task = document.getElementById(id);
+  // console.log(status);
+  let index = findTask(task.innerText);
+  console.log(history[index].completed);
+  console.log(status.checked);
+  history[index].completed = status.checked;
+  updateStorage();
   if (status.checked == true) {
     task.style.background = "grey";
   } else {
-    task.style.background = "rgb(214, 63, 63)";
+    task.style.background = "rgb(125, 216, 247)";
   }
 }
 
@@ -193,6 +217,7 @@ function updateStorage() {
   localStorage.setItem("TODO", JSON.stringify(history));
 }
 
+// Finds the index of task in the history array
 function findTask(element) {
   let index = 0;
   for (; index < history.length; index++) {
